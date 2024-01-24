@@ -1,0 +1,35 @@
+#include<stdio.h>
+void push(int x);
+void pop();
+void display();
+int stack[5];
+int top=-1;
+void push(int x)
+{
+    top++;
+    stack[top]=x;
+}
+void pop()
+{
+    int item;
+    item=stack[top];
+    top--;
+}
+void display()
+{
+    for(int i=0;i<=top;i++)
+    {
+        printf("%d\n",stack[i]);
+    }
+}
+int main()
+{
+    push(1);
+    push(2);
+    push(3);
+    push(4);
+    push(5);
+    display();
+    pop();
+    display();
+}
