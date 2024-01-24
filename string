@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <string.h>
+int add(int a,int b);
+int sub(int c,int d);
+void insert(int a);
+int delete();
+int add(int a,int b)
+{
+    return a+b;
+}
+int sub(int c,int d)
+{
+    return c-d;
+}
+void swap(int *x,int *y)
+{
+    int d;
+    d=*x;
+    *x=*y;
+    *y=d;
+    return;
+}
+
+int queue[10];
+int front=0;
+int rear=0;
+void insert(int a){
+    queue[rear]=a;
+    rear++;
+}
+int delete(){
+    int val = queue[front];
+    front--;
+    return val;
+}
+int main(){
+    int a=0;
+    int b=20;
+    int c=30;
+    int i=0;
+    printf("hello world!!");
+    for (i=0;i<10;i++) {
+        printf("%d",i);
+    }
+    char name[10]=("Apurva");
+    char reversename[10];
+    printf("%s\n",name);
+    printf("%ld\n",strlen(name));
+    int len=strlen(name);
+    int j=0;
+    for(i=len-1;i>=0;i--)
+    {
+        printf("====> %c\n",name[i]);
+        reversename[j]=name[i];
+        j++;
+    }
+    reversename[j]='\0';
+    printf("---->%s",reversename);
+    int e=add(6,5);
+    int f=sub(7,4);
+    printf("---->%d\n",e);
+    printf("---->%d\n",f);
+    
+    swap(&b,&c);
+    printf("b=%d\n",b);
+    printf("c=%d\n",c);
+    insert(1);
+    printf("%d",rear);
+    printf("%d",front);
+    return 0;
+}
+
