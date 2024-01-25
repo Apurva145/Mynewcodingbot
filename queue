@@ -1,0 +1,40 @@
+#include<stdio.h>
+void insert(int a);
+void delete();
+void display();
+int queue[5];
+int front=0;
+int rear=0;
+int val;
+void insert(int a)
+{
+    val=queue[rear]=a;
+    rear++;
+}
+void delete()
+{
+    front++;
+}
+void display()
+{
+    for(int i=front;i<rear;i++)
+    {
+        printf("%d\n---->",queue[i]);
+    }
+}
+int main()
+{
+    insert(1);
+    insert(2);
+    insert(3);
+    insert(4);
+    insert(5);
+    display();
+    delete();
+    delete();
+    delete();
+    delete();
+    delete();
+    display();
+    return 0;
+}
